@@ -1,123 +1,176 @@
-% The formatting of this CV is based on @davidwhogg's layout.
-
-\documentclass[12pt,letterpaper]{article}
-
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+                       
+\usepackage{XCharter}               % set font. comment this line out if you want to use the default LaTeX font Computer Modern
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage{etaremune}
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
 \usepackage{ragged2e}
 
-\input{cvstyle}
+\newcommand{\doi}[2]{\emph{\href{http://dx.doi.org/#1}{{#2}}}}
+\newcommand{\ads}[2]{\href{http://adsabs.harvard.edu/abs/#1}{{#2}}}
+\newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
+\newcommand{\arxiv}[1]{{\href{http://arxiv.org/abs/#1}{arXiv:{#1}}}}
 
-\begin{document}\thispagestyle{empty}\sloppy\sloppypar\raggedbottom
+% ensure PDF output will be all-Unicode and machine-readable
+\input{glyphtounicode}
+\pdfgentounicode=1
 
-\textbf{\Large Stefan M Arseneau} \hfill
-\textsf{\small https://stefanarseneau.github.io} \\[0.5ex]
-Department of Astronomy, Boston University, Boston, MA  \hfill \textsf{\small arseneau@bu.edu} \\[0.5ex]
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
 
-\vspace{0.5em}
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} %%% Test various topsep values to fix vertical spacing errors
+
+% resume starts here
+\begin{document}
+
+% name
+\textbf{\huge Stefan M Arseneau} \hfill
+\textsf{\large https://stefanarseneau.github.io} \\[0.5ex]
+\large Department of Astronomy, Boston University, Boston, MA  \hfill \textsf{\large arseneau@bu.edu} \\[0.5ex]
+
+\vspace{5pt}
+
 \justifying \noindent My research focuses on precision measurements of white dwarf stellar parameters and their use in stellar structure inference. I am especially interested in efficient uncertainty characterization with MCMC, statistical inference using large and noisy datasets, and identifying previously unknown sources of systematic uncertainty.
 
-\vspace{0.5em}
-\noindent\rule{\textwidth}{0.4pt}
+\vspace{-5pt}
 
-\subsection{Education}
-\begin{list}{}{\cvlist}
-  \item
-        PhD 2029 (Expected), Department of Astronomy, Boston University. \\Advisor: J.J. Hermes
-  \item
-        MA 2026 (Expected), Department of Astronomy, Boston University.
-  \item
-        BS 2024, Department of Physics, Johns Hopkins University.
-   \item
-        BA 2024, Department of Mathematics, Johns Hopkins University.
-\end{list}
+% education section
+\section*{Education}
+\textbf{Boston University} -- PhD, MA in Astronomy \hfill Expected 2029 \\
+\textbf{Johns Hopkins University} -- BS in Physics, BA in Mathematics \hfill 2024
 
-\subsection{Positions}
-\begin{list}{}{\cvlist}
-  \item
-        Graduate Research Fellow, Boston University, 2025--present.
-  \item
-        Member, Sloan Digital Sky Survey V, 2022--present.
-\end{list}
+\vspace{-6.5pt}
 
-\subsection{Observatory Allocations}
-\begin{list}{}{\cvlist}
-  \item
-        ESO Very Large Telescope, UVES, 17.5 Hours (co-PI with Roberto Raddi), 2024 \\
-        {\it Constraints on the Gravitational Redshifts and Mass-Radius Relation of High-Mass White Dwarfs in Wide Binaries}
-  \item
-       Gemini Observatory, GMOS, 2 Hours, 2023 \\
-        {\it Probing the Mass-Radius Relation of White Dwarfs in Wide Binaries}
-\end{list}
+% experience section
+\section*{Experience}
+\textbf{Research Fellow,} {Department of Astronomy, Boston University} -- Boston, MA \hfill 2024 -- Present \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Performed observational measurements of the white dwarf mass-radius relation and stellar structure using gravitational redshifts and asteroseismology.
+\end{itemize}
 
-\subsection{Honors}
-\begin{list}{}{\cvlist}
+\textbf{Member,} {Milky Way Mapper, Sloan Digital Sky Survey V} \hfill 2024 -- Present \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Developed and validated white dwarf parameter estimation for \texttt{astra}, Milky Way Mapper data reduction pipeline.
+\end{itemize}
 
-  \item Graduate Research Fellowship, Boston University, 2025.
-  \item Provost's Undergraduate Research Award, Johns Hopkins University, 2023.
+\textbf{Research Fellow,} {CLASS Telescope, Johns Hopkins University} -- Baltimore, MD \hfill  2022 -- 2024 \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Modeled the effects of radiative heat transfer on performance of the filter stack using COMSOL Multiphysics.
+\end{itemize}
 
-\end{list}
+% \textbf{Job Title,} \href{https://www.fstl1992.com/}{Company} -- City, ST \hfill XXXX -- XXXX \\
+% \vspace{-9pt}
 
-% \ifdefined\withpubs
-%     \newpage
-% \fi
+\vspace{-16.5pt}
 
-\subsection{Professional Service \& Activities}
-\begin{list}{}{\cvlist}
-  \item Conference Organizer --- Boston Area Planetary Science Meeting, Spring 2025 \& Fall 2025
-\end{list}
+\section{Honors}
+\begin{itemize}
+  \item Graduate Research Fellowship, Boston University \hfill 2025
+  \item Provost's Undergraduate Research Award, Johns Hopkins University \hfill 2023
+\end{itemize}
 
-\subsection{Open-Source Software}
-\begin{list}{}{\cvlist}
-  \item  \href{https://github.com/stefanarseneau/ember}{{\bf ember}} : Estimating Masses and Bolometric Properties of Evolved Remnants  \\
-MCMC parameter estimation for white dwarf atmospheres using externally calibrated Gaia BP/RP spectra.
-  \item  \href{https://github.com/vedantchandra/corv}{{\bf corv}} : Compact Object Radial Velocities  \\
-The White Dwarf radial velocity pipeline used in the SDSS-V ASTRA pipeline.
-\end{list}
+\section*{Observatory Allocations}
+\begin{itemize}
+  \item ESO Very Large Telescope, UVES, 17.5 Hours (co-PI with Roberto Raddi) \hfill 2024 \\
+  \vspace{4pt} \textit{Constraints on the Gravitational Redshifts and Mass-Radius Relation of High-Mass White Dwarfs in Wide Binaries}
+  \item Gemini Observatory, GMOS, 2 Hours \hfill 2023 \\
+  \vspace{4pt} \textit{Probing the Mass-Radius Relation of White Dwarfs in Wide Binaries}
+\end{itemize}
 
-\subsection{Publications}
+\section{Talks \& Conferences}
+\begin{itemize}
+  \item Conference Organizer --- Boston Area Planetary Science Meeting \hfill Spring 2025 \& Fall 2025
+  \item Poster Presentation -- SDSS-V Collaboration Meeting (MPIA, Heidelberg, DE) \hfill 2025 \\
+  \vspace{4pt} \textit{Resolution-Corrected White Dwarf Gravitational Redshifts Validate SDSS-V Wavelength Calibration and Enable Accurate Mass-Radius Tests}
+\end{itemize}
 
-\subsubsection{First Author}
-\begin{list}{}{\cvlist}
-  \item[{\color{numcolor}\scriptsize3}] \textbf{S.M. Arseneau}; J.J. Hermes; M.E. Camisassa; R. Raddi; E.B. Bauer, 2026, Constraints on White Dwarf Hydrogen Layer Masses Using Gravitational Redshifts, The Astrophysical Journal, In Press \arxiv{2603.02314} [\href{https://ui.adsabs.harvard.edu/abs/2026arXiv260302314A}{ADS Link}].
+% projects section
+\section*{Open Source Projects}
+\textbf{Compact Object Radial Velocities} \hfill \href{https://github.com/vedantchandra/corv}{github.com/vedantchandra/corv} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Primary author and maintainer of a scientific software package for precision radial velocity estimation.
+  \item Integrated into the Sloan Digital Sky Survey data reduction pipeline, processing >200 GB of data per night.
+\end{itemize}
+
+\section{Publications}
+
+\textit{Publications as First Author --}
+
+\begin{etaremune}
+  \item \textbf{S. M. Arseneau}; J.J. Hermes; M.E. Camisassa; R. Raddi; E.B. Bauer, 2026, \doi{https://arxiv.org/abs/2603.02314}{Constraints on White Dwarf Hydrogen Layer Masses Using Gravitational Redshifts}, The Astrophysical Journal, In Press \arxiv{2603.02314} [\href{https://ui.adsabs.harvard.edu/abs/2026arXiv260302314A}{ADS Link}].
   
-  \item[{\color{numcolor}\scriptsize2}] \textbf{S.M. Arseneau}; J.J. Hermes; N.L. Zakamska; K. El-Badry; N.R. Crumpler; V. Chandra; G. Adamane Pallathadka; C. Badenes; B.T. G\"aniscke; N. Gentile Fusillo, 2025, \doi{10.3847/1538-4357/adf8dd}{Resolution-Corrected White Dwarf Gravitational Redshifts Validate SDSS-V Wavelength Calibration and Enable Accurate Mass-Radius Tests}, The Astrophysical Journal, 991 190 (\arxiv{2508.04775}) [\href{https://ui.adsabs.harvard.edu/abs/2025ApJ...991..190A/}{ADS Link}]
+  \item \textbf{S. M. Arseneau}; J.J. Hermes; N.L. Zakamska; K. El-Badry; N.R. Crumpler; V. Chandra; G. Adamane Pallathadka; C. Badenes; B.T. G\"aniscke; N. Gentile Fusillo, 2025, \doi{10.3847/1538-4357/adf8dd}{Resolution-Corrected White Dwarf Gravitational Redshifts Validate SDSS-V Wavelength Calibration and Enable Accurate Mass-Radius Tests}, The Astrophysical Journal, 991 190 (\arxiv{2508.04775}) [\href{https://ui.adsabs.harvard.edu/abs/2025ApJ...991..190A/}{ADS Link}]
 
-  \item[{\color{numcolor}\scriptsize1}] \textbf{S.M. Arseneau}; V. Chandra; H.C. Hwang; N.L. Zakamska; G.A. Pallathadka; N.R. Crumpler; J.J. Hermes; K. El-Badry; H-W. Rix; K.G. Stassun; B.T. G\"ansicke; J.R. Brownstein; S. Morrison, 2025, \doi{10.3847/1538-4357/ad2168}{Measuring the Mass–Radius Relation of White Dwarfs Using Wide Binaries}, The Astrophysical Journal, 963, 17 (\arxiv{2310.19866}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...963...17A/abstract}{ADS Link}]
-\end{list}
+  \item \textbf{S. M. Arseneau}; V. Chandra; H.C. Hwang; N.L. Zakamska; G.A. Pallathadka; N.R. Crumpler; J.J. Hermes; K. El-Badry; H-W. Rix; K.G. Stassun; B.T. G\"ansicke; J.R. Brownstein; S. Morrison, 2025, \doi{10.3847/1538-4357/ad2168}{Measuring the Mass–Radius Relation of White Dwarfs Using Wide Binaries}, The Astrophysical Journal, 963, 17 (\arxiv{2310.19866}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...963...17A/abstract}{ADS Link}]
+\end{etaremune}
 
-\subsubsection{Non-First Author}
-\begin{list}{}{\cvlist}
-  \item[{\color{numcolor}\scriptsize10}] G.A. Pallathadka; V. Chandra; N.L. Zakamska; N.R. Crumpler; \textbf{S.M. Arseneau}; K. El-Badry; B.T. G\"aniscke; Y. Zentai; J.~J. Hermes; A.D. Schwope; C. Badenes; N.P. Gentile Fusillo; S. Morrison; T. Cunningham; P. Chakraborty; G Tovmasian; D Bizyaev; K. Pan; S.F. Anderson; S. Demasi, 2025, \doi{10.48550/arXiv.2509.02906}{Double White Dwarf Binaries in SDSS-V DR19 : A catalog of DA white dwarf binaries and constraints on the binary population}, The Astrophysical Journal, In Press (\arxiv{2509.02906}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250902906A}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize9}] K.R. Helson; C.Y.Y. Chan; \textbf{S. Arseneau}; A. Barlis; C.L. Bennett; T.M. Essinger-Hileman; H. Guo; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J. Wollack, 2025, \doi{10.48550/arXiv.2508.20406}{Diamond-loaded polyimide aerogel scattering filters and their applications in astrophysical and planetary science observations,} Review of Scientific Instruments, Submitted (\arxiv{2508.20406}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250820406H}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize8}] N.R. Crumpler; V. Chandra; N.L. Zakamska; G.A. Pallathadka; \textbf{S. Arseneau}; N.P. Gentile Fusillo; J. J. Hermes; C. Badenes; P. Chakraborty; B.T. G\"ansicke; S. Morrison; H-W. Rix; S.P. Schmidt; A. Schwope; K.G. Stassun, 2025, \doi{10.3847/1538-4357/ade9a9}{A Large Catalog of DA White Dwarf Characteristics Using SDSS and Gaia Observations,} The Astrophysical Journal, 989 24 (\arxiv{2508.00818}) [\href{https://ui.adsabs.harvard.edu/abs/2025ApJ...989...24C}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize7}] G.A. Pallathadka; V. Chandra; B.T. G\"ansicke; N.L. Zakamska; D. Koester; Y. Zentai; N.R. Crumpler; \textbf{S.M. Arseneau}; J.J. Hermes; M.R. Schreiber; K.G. Stassun; A. Schwope; K. El-Badry; G. Tovmassian; T. Cunningham; S. Morrison, 2025, \doi{10.48550/arXiv.2507.11618}{Double White Dwarf Binaries in SDSS-V DR19 : The discovery of a rare DA+DQ white dwarf binary with 31 hour orbital period,} The Astrophysical Journal, In Press (\arxiv{2507.11618}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250711618A}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize6}] J.A. Kollmeier; H.-W. Rix; C. Aerts; J. Aird; P.V. Alfaro; A. Almeida; S.F. Anderson; O.J. Arranz; \textbf{S.M. Arseneau} et al., 2025, \doi{10.48550/arXiv.2507.06989}{Sloan Digital Sky Survey-V: Pioneering Panoptic Spectroscopy,} The Astronomical Journal, 171, 52 (\arxiv{2507.06989}) [\href{https://ui.adsabs.harvard.edu/abs/2026AJ....171...52K/abstract}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize5}] SDSS Collaboration, G.A. Pallathadka, M. Aghakhanloo, J. Aird, A. Almeida, S. Amrita, F. Anders, S.F. Anderson, \textbf{S. Arseneau} et al., 2025, \doi{10.48550/arXiv.2507.07093}{ The Nineteenth Data Release of the Sloan Digital Sky Survey,} The Astrophysical Journal, In Press (\arxiv{2507.07093}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250707093S}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize4}] N.R. Crumpler; V. Chandra; N.L. Zakamska; G.A. Pallathadka; \textbf{S. Arseneau}; N. Gentile Fusillo; J.J. Hermes; C. Badenes; P. Chakraborty; B.T. Gänsicke; S.P. Schmidt, 2024, \doi{10.3847/1538-4357/ad8ddc}{Detection of the Temperature Dependence of the White Dwarf Mass-Radius Relation with Gravitational Redshifts,} The Astrophysical Journal, 977 2 (\arxiv{2412.14331}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...977..237C}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize3}]  G.A. Pallathadka; V. Chandra; N.L. Zakamska; H-C. Hwang; Y. Zentai; J.J. Hermes; K. El-Badry; B.T. G\"ansicke; S. Morrison; N.R. Crumpler; \textbf{S. Arseneau}, 2024, \doi{   10.3847/1538-4357/ad3e86}{Discovery of A Proto-White Dwarf With A Massive Unseen Companion,} Astrophysical Journal, 968 1 (\arxiv{2310.16313}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...968...42A}{ADS Link}]
-  
-  \item[{\color{numcolor}\scriptsize2}] A. Barlis; \textbf{S. Arseneau}; C.L. Bennett; T. Essinger-Hileman; H. Guo; K.R. Helson; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J.Wollack, 2022, \doi{   10.1117/12.2627341}{Characterization of aerogel scattering filters for astronomical telescopes,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121902I (\arxiv{2208.04257}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..2IB}{ADS Link}]
+\textit{Publications as Contributing Author --}
 
-  \item[{\color{numcolor}\scriptsize1}] K.R. Helson; \textbf{S. Arseneau}; A. Barlis; C.L. Bennett; T.M. Essinger-Hileman; H. Guo; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J. Wollack, 2022, \doi{10.1117/12.2630165}{Novel infrared-blocking aerogel scattering filters and their applications in astrophysical and planetary science,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121901P (\arxiv{2208.03755}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..1PH}{ADS Link}]
-\end{list}
+\begin{etaremune}
+    \item G.A. Pallathadka; V. Chandra; N.L. Zakamska; N.R. Crumpler; \textbf{S. M. Arseneau}; K. El-Badry; B.T. G\"aniscke; Y. Zentai; J.~J. Hermes; A.D. Schwope; C. Badenes; N.P. Gentile Fusillo; S. Morrison; T. Cunningham; P. Chakraborty; G Tovmasian; D Bizyaev; K. Pan; S.F. Anderson; S. Demasi, 2025, \doi{10.48550/arXiv.2509.02906}{Double White Dwarf Binaries in SDSS-V DR19 : A catalog of DA white dwarf binaries and constraints on the binary population}, The Astrophysical Journal, In Press (\arxiv{2509.02906}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250902906A}{ADS Link}]
+  
+    \item K.R. Helson; C.Y.Y. Chan; \textbf{S. Arseneau}; A. Barlis; C.L. Bennett; T.M. Essinger-Hileman; H. Guo; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J. Wollack, 2025, \doi{10.48550/arXiv.2508.20406}{Diamond-loaded polyimide aerogel scattering filters and their applications in astrophysical and planetary science observations,} Review of Scientific Instruments, Submitted (\arxiv{2508.20406}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250820406H}{ADS Link}]
+  
+    \item N.R. Crumpler; V. Chandra; N.L. Zakamska; G.A. Pallathadka; \textbf{S. Arseneau}; N.P. Gentile Fusillo; J. J. Hermes; C. Badenes; P. Chakraborty; B.T. G\"ansicke; S. Morrison; H-W. Rix; S.P. Schmidt; A. Schwope; K.G. Stassun, 2025, \doi{10.3847/1538-4357/ade9a9}{A Large Catalog of DA White Dwarf Characteristics Using SDSS and Gaia Observations,} The Astrophysical Journal, 989 24 (\arxiv{2508.00818}) [\href{https://ui.adsabs.harvard.edu/abs/2025ApJ...989...24C}{ADS Link}]
+  
+    \item G.A. Pallathadka; V. Chandra; B.T. G\"ansicke; N.L. Zakamska; D. Koester; Y. Zentai; N.R. Crumpler; \textbf{S. M. Arseneau}; J.J. Hermes; M.R. Schreiber; K.G. Stassun; A. Schwope; K. El-Badry; G. Tovmassian; T. Cunningham; S. Morrison, 2025, \doi{10.48550/arXiv.2507.11618}{Double White Dwarf Binaries in SDSS-V DR19 : The discovery of a rare DA+DQ white dwarf binary with 31 hour orbital period,} The Astrophysical Journal, In Press (\arxiv{2507.11618}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250711618A}{ADS Link}]
+  
+    \item J.A. Kollmeier; H.-W. Rix; C. Aerts; J. Aird; P.V. Alfaro; A. Almeida; S.F. Anderson; O.J. Arranz; \textbf{S. M. Arseneau} et al., 2025, \doi{10.48550/arXiv.2507.06989}{Sloan Digital Sky Survey-V: Pioneering Panoptic Spectroscopy,} The Astronomical Journal, 171, 52 (\arxiv{2507.06989}) [\href{https://ui.adsabs.harvard.edu/abs/2026AJ....171...52K/abstract}{ADS Link}]
+  
+    \item SDSS Collaboration, G.A. Pallathadka, M. Aghakhanloo, J. Aird, A. Almeida, S. Amrita, F. Anders, S.F. Anderson, \textbf{S. Arseneau} et al., 2025, \doi{10.48550/arXiv.2507.07093}{ The Nineteenth Data Release of the Sloan Digital Sky Survey,} The Astrophysical Journal, In Press (\arxiv{2507.07093}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250707093S}{ADS Link}]
+  
+    \item N.R. Crumpler; V. Chandra; N.L. Zakamska; G.A. Pallathadka; \textbf{S. Arseneau}; N. Gentile Fusillo; J.J. Hermes; C. Badenes; P. Chakraborty; B.T. Gänsicke; S.P. Schmidt, 2024, \doi{10.3847/1538-4357/ad8ddc}{Detection of the Temperature Dependence of the White Dwarf Mass-Radius Relation with Gravitational Redshifts,} The Astrophysical Journal, 977 2 (\arxiv{2412.14331}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...977..237C}{ADS Link}]
+  
+    \item G.A. Pallathadka; V. Chandra; N.L. Zakamska; H-C. Hwang; Y. Zentai; J.J. Hermes; K. El-Badry; B.T. G\"ansicke; S. Morrison; N.R. Crumpler; \textbf{S. Arseneau}, 2024, \doi{   10.3847/1538-4357/ad3e86}{Discovery of A Proto-White Dwarf With A Massive Unseen Companion,} Astrophysical Journal, 968 1 (\arxiv{2310.16313}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...968...42A}{ADS Link}]
+  
+    \item A. Barlis; \textbf{S. Arseneau}; C.L. Bennett; T. Essinger-Hileman; H. Guo; K.R. Helson; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J.Wollack, 2022, \doi{   10.1117/12.2627341}{Characterization of aerogel scattering filters for astronomical telescopes,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121902I (\arxiv{2208.04257}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..2IB}{ADS Link}]
+  
+    \item K.R. Helson; \textbf{S. Arseneau}; A. Barlis; C.L. Bennett; T.M. Essinger-Hileman; H. Guo; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J. Wollack, 2022, \doi{10.1117/12.2630165}{Novel infrared-blocking aerogel scattering filters and their applications in astrophysical and planetary science,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121901P (\arxiv{2208.03755}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..1PH}{ADS Link}]
 
-\subsubsection{Non-Peer Reviewed Publications}
-\begin{list}{}{\cvlist}
-  \item[\color{numcolor}\scriptsize1] G.A. Pallathadka; N.L. Zakamska; V. Chandra; N.R. Crumpler; \textbf{S.M. Arseneau}; J.J. Hermes; B.T. G\"ansicke; N. Gentile Fusillo; 2025. Double Degenerate WD Binaries in SDSS-V DR19. American Astronomical Society Meeting Abstracts, 245, 257.04.
+\end{etaremune}
 
-\end{list}
+\textit{Non-Peer-Reviewed Publications --}
 
-\subsection{Professional References}
-\begin{list}{}{\cvlist}
+\begin{etaremune}
+    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2026. Constraints on the Double White Dwarf Binary Population from SDSS-V DR19. American Astronomical Society Meeting Abstracts, 247, 428.01.
+    
+    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2025. Double Degenerate WD Binaries in SDSS-V DR19. American Astronomical Society Meeting Abstracts, 245, 257.04.
+\end{etaremune}
+
+\section{Professional References}
+\begin{itemize}
   \item J.J. Hermes (Boston University, PhD Advisor) \hfill jjhermes@bu.edu
   \item Nadia L. Zakamska (Johns Hopkins University, Advisor) \hfill zakamska@jhu.edu
   \item Carles Badenes (University of Pittsburgh) \hfill badenes@pitt.edu
-\end{list}
+\end{itemize}
+
+% alternate formatting for projects section
+% \section*{Projects}
+% \begin{itemize}
+%   \item \textbf{QuantSoftware Toolkit:} Open source Python library for data analysis and machine learning for finance
+%   \item \textbf{GitHub Visualization:} Data visualization of Git Log data using D3 to analyze project trends over time
+%   \item \textbf{Recommendation System:} Music and movie recommender systems using collaborative filtering on public datasets
+%   \item \textbf{Mac Setup:} Book that gives step by step instructions on setting up developer environment on Mac OS
+% \end{itemize}
+
+\vspace{-18.5pt}
+
+
 
 \end{document}
