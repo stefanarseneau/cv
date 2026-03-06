@@ -22,6 +22,7 @@ right=0.5in]{geometry}              % specify right page margin
 \newcommand{\ads}[2]{\href{http://adsabs.harvard.edu/abs/#1}{{#2}}}
 \newcommand{\isbn}[1]{{\footnotesize(\textsc{isbn:}{#1})}}
 \newcommand{\arxiv}[1]{{\href{http://arxiv.org/abs/#1}{arXiv:{#1}}}}
+\newcommand{\email}[1]{{\href{mailto:#1}{{#1}}}}
 
 % ensure PDF output will be all-Unicode and machine-readable
 \input{glyphtounicode}
@@ -40,7 +41,7 @@ right=0.5in]{geometry}              % specify right page margin
 % name
 \textbf{\huge Stefan M Arseneau} \hfill
 \textsf{\large \href{https://stefanarseneau.github.io}{https://stefanarseneau.github.io}} \\[0.5ex]
-\large Department of Astronomy, Boston University, Boston, MA, USA  \hfill \textsf{\large \href{mailto:arseneau@bu.edu}{arseneau@bu.edu}} \\[0.5ex]
+\large Department of Astronomy, Boston University, Boston, MA, USA  \hfill \textsf{\large \email{arseneau@bu.edu}} \\[0.5ex]
 
 \vspace{5pt}
 
@@ -50,40 +51,42 @@ right=0.5in]{geometry}              % specify right page margin
 
 % education section
 \section*{Education}
-\textbf{Boston University} -- PhD, MA in Astronomy \hfill Expected 2029 \\
-\textbf{Johns Hopkins University} -- BS in Physics, BA in Mathematics \hfill 2024
+Boston University --- PhD, MA in Astronomy \hfill Expected 2029 \\
+\vspace{2pt}
+Johns Hopkins University --- BS in Physics, BA in Mathematics \hfill 2024
 
 \vspace{-6.5pt}
 
 % experience section
 \section*{Experience}
-\textbf{Research Fellow,} {Department of Astronomy, Boston University} -- Boston, MA \hfill 2024 -- Present \\
+Research Fellow, {Department of Astronomy, Boston University} --- Boston, MA, USA \hfill 2024 --- Present \\
 \vspace{-9pt}
 \begin{itemize}
   \item Performed observational measurements of the white dwarf mass-radius relation and stellar structure using gravitational redshifts and asteroseismology.
 \end{itemize}
 
-\textbf{Member,} {Milky Way Mapper, Sloan Digital Sky Survey V} \hfill 2024 -- Present \\
+Member, {Milky Way Mapper, Sloan Digital Sky Survey V} \hfill 2024 --- Present \\
 \vspace{-9pt}
 \begin{itemize}
   \item Developed and validated white dwarf parameter estimation for \texttt{astra}, Milky Way Mapper data reduction pipeline.
 \end{itemize}
 
-\textbf{Research Fellow,} {CLASS Telescope, Johns Hopkins University} -- Baltimore, MD \hfill  2022 -- 2024 \\
+Research Fellow, {CLASS Telescope, Johns Hopkins University} --- Baltimore, MD, USA \hfill  2022 --- 2024 \\
 \vspace{-9pt}
 \begin{itemize}
-  \item Modeled the effects of radiative heat transfer on performance of the filter stack using COMSOL Multiphysics.
+  \item Modeled effects of radiative heat transfer on performance of filters using COMSOL Multiphysics.
 \end{itemize}
 
-% \textbf{Job Title,} \href{https://www.fstl1992.com/}{Company} -- City, ST \hfill XXXX -- XXXX \\
+% \textbf{Job Title,} \href{https://www.fstl1992.com/}{Company} --- City, ST \hfill XXXX --- XXXX \\
 % \vspace{-9pt}
 
 \vspace{-16.5pt}
 
-\section{Honors}
+\section{Talks \& Conferences}
 \begin{itemize}
-  \item Graduate Research Fellowship, Boston University \hfill 2025
-  \item Provost's Undergraduate Research Award, Johns Hopkins University \hfill 2023
+  \item Conference Organizer --- Boston Area Planetary Science Meeting \hfill Spring 2025 \& Fall 2025
+  \item Poster Presentation --- SDSS-V Collaboration Meeting (MPIA, Heidelberg, DE) \hfill 2025 \\
+  \vspace{4pt} \textit{Resolution-Corrected White Dwarf Gravitational Redshifts Validate SDSS-V Wavelength Calibration and Enable Accurate Mass-Radius Tests}
 \end{itemize}
 
 \section*{Observatory Allocations}
@@ -94,11 +97,10 @@ right=0.5in]{geometry}              % specify right page margin
   \vspace{4pt} \textit{Probing the Mass-Radius Relation of White Dwarfs in Wide Binaries}
 \end{itemize}
 
-\section{Talks \& Conferences}
+\section{Honors}
 \begin{itemize}
-  \item Conference Organizer --- Boston Area Planetary Science Meeting \hfill Spring 2025 \& Fall 2025
-  \item Poster Presentation -- SDSS-V Collaboration Meeting (MPIA, Heidelberg, DE) \hfill 2025 \\
-  \vspace{4pt} \textit{Resolution-Corrected White Dwarf Gravitational Redshifts Validate SDSS-V Wavelength Calibration and Enable Accurate Mass-Radius Tests}
+  \item Graduate Research Fellowship, Boston University \hfill 2025
+  \item Provost's Undergraduate Research Award, Johns Hopkins University \hfill 2023
 \end{itemize}
 
 % projects section
@@ -107,12 +109,12 @@ Compact Object Radial Velocities \hfill \href{https://github.com/vedantchandra/c
 \vspace{-9pt}
 \begin{itemize}
   \item Primary author and maintainer of a scientific software package for precision radial velocity estimation.
-  \item Integrated into the Sloan Digital Sky Survey data reduction pipeline, processing >200 GB of data per night.
+  \item Integrated into the Sloan Digital Sky Survey data reduction pipeline, processing >200 GB per night.
 \end{itemize}
 
 \section{Publications}
 
-\textit{Publications as First Author --}
+\textit{Publications as First Author ---}
 
 \begin{etaremune}
   \item \textbf{S. M. Arseneau}; J.J. Hermes; M.E. Camisassa; R. Raddi; E.B. Bauer, 2026, \doi{https://arxiv.org/abs/2603.02314}{Constraints on White Dwarf Hydrogen Layer Masses Using Gravitational Redshifts}, The Astrophysical Journal, In Press \arxiv{2603.02314} [\href{https://ui.adsabs.harvard.edu/abs/2026arXiv260302314A}{ADS Link}].
@@ -122,7 +124,7 @@ Compact Object Radial Velocities \hfill \href{https://github.com/vedantchandra/c
   \item \textbf{S. M. Arseneau}; V. Chandra; H.C. Hwang; N.L. Zakamska; G.A. Pallathadka; N.R. Crumpler; J.J. Hermes; K. El-Badry; H-W. Rix; K.G. Stassun; B.T. G\"ansicke; J.R. Brownstein; S. Morrison, 2025, \doi{10.3847/1538-4357/ad2168}{Measuring the Mass–Radius Relation of White Dwarfs Using Wide Binaries}, The Astrophysical Journal, 963, 17 (\arxiv{2310.19866}) [\href{https://ui.adsabs.harvard.edu/abs/2024ApJ...963...17A/abstract}{ADS Link}]
 \end{etaremune}
 
-\textit{Publications as Contributing Author --}
+\textit{Publications as Contributing Author ---}
 
 \begin{etaremune}
     \item G.A. Pallathadka; V. Chandra; N.L. Zakamska; N.R. Crumpler; \textbf{S. M. Arseneau}; K. El-Badry; B.T. G\"aniscke; Y. Zentai; J.~J. Hermes; A.D. Schwope; C. Badenes; N.P. Gentile Fusillo; S. Morrison; T. Cunningham; P. Chakraborty; G Tovmasian; D Bizyaev; K. Pan; S.F. Anderson; S. Demasi, 2025, \doi{10.48550/arXiv.2509.02906}{Double White Dwarf Binaries in SDSS-V DR19 : A catalog of DA white dwarf binaries and constraints on the binary population}, The Astrophysical Journal, In Press (\arxiv{2509.02906}) [\href{https://ui.adsabs.harvard.edu/abs/2025arXiv250902906A}{ADS Link}]
@@ -144,35 +146,21 @@ Compact Object Radial Velocities \hfill \href{https://github.com/vedantchandra/c
     \item A. Barlis; \textbf{S. Arseneau}; C.L. Bennett; T. Essinger-Hileman; H. Guo; K.R. Helson; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J.Wollack, 2022, \doi{   10.1117/12.2627341}{Characterization of aerogel scattering filters for astronomical telescopes,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121902I (\arxiv{2208.04257}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..2IB}{ADS Link}]
   
     \item K.R. Helson; \textbf{S. Arseneau}; A. Barlis; C.L. Bennett; T.M. Essinger-Hileman; H. Guo; T. Marriage; M.A. Quijada; A.E. Tokarz; S.L. Vivod; E.J. Wollack, 2022, \doi{10.1117/12.2630165}{Novel infrared-blocking aerogel scattering filters and their applications in astrophysical and planetary science,} Proc. SPIE 12190, Millimeter, Submillimeter, and Far-Infrared Detectors and Instrumentation for Astronomy XI, 121901P (\arxiv{2208.03755}) [\href{https://ui.adsabs.harvard.edu/abs/2022SPIE12190E..1PH}{ADS Link}]
-
 \end{etaremune}
 
-\textit{Non-Peer-Reviewed Publications --}
+\textit{Non-Peer-Reviewed Publications ---}
 
 \begin{etaremune}
-    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2026. Constraints on the Double White Dwarf Binary Population from SDSS-V DR19. American Astronomical Society Meeting Abstracts, 247, 428.01.
+    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2026. Constraints on the Double White Dwarf Binary Population from SDSS-V DR19. American Astronomical Society Meeting Abstracts, 247, 428.01. [\href{https://ui.adsabs.harvard.edu/abs/2026AAS...24742801A/}{ADS Link}]
     
-    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2025. Double Degenerate WD Binaries in SDSS-V DR19. American Astronomical Society Meeting Abstracts, 245, 257.04.
+    \item G.A. Pallathadka et. al, incl. \textbf{S. M. Arseneau}; 2025. Double Degenerate WD Binaries in SDSS-V DR19. American Astronomical Society Meeting Abstracts, 245, 257.04. [\href{https://ui.adsabs.harvard.edu/abs/2025AAS...24525704A/}{ADS Link}]
 \end{etaremune}
 
 \section{Professional References}
 \begin{itemize}
-  \item J.J. Hermes (Boston University, PhD Advisor) \hfill jjhermes@bu.edu
-  \item Nadia L. Zakamska (Johns Hopkins University, Advisor) \hfill zakamska@jhu.edu
-  \item Carles Badenes (University of Pittsburgh) \hfill badenes@pitt.edu
+  \item J. J. Hermes (Boston University, PhD Advisor) \hfill \email{jjhermes@bu.edu}
+  \item Nadia L. Zakamska (Johns Hopkins University, Advisor) \hfill \email{zakamska@jhu.edu}
+  \item Carles Badenes (University of Pittsburgh) \hfill \email{badenes@pitt.edu}
 \end{itemize}
-
-% alternate formatting for projects section
-% \section*{Projects}
-% \begin{itemize}
-%   \item \textbf{QuantSoftware Toolkit:} Open source Python library for data analysis and machine learning for finance
-%   \item \textbf{GitHub Visualization:} Data visualization of Git Log data using D3 to analyze project trends over time
-%   \item \textbf{Recommendation System:} Music and movie recommender systems using collaborative filtering on public datasets
-%   \item \textbf{Mac Setup:} Book that gives step by step instructions on setting up developer environment on Mac OS
-% \end{itemize}
-
-\vspace{-18.5pt}
-
-
 
 \end{document}
