@@ -10,11 +10,13 @@ right=0.5in]{geometry}              % specify right page margin
 \usepackage[utf8]{inputenc}         % input encoding
 \usepackage{enumitem}               % enable lists for bullet points: itemize and \item
 \usepackage{etaremune}
-\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{hyperref}    % format hyperlinks
 \usepackage{titlesec}               % enable section title customization
 \raggedright                        % disable text justification
 \pagestyle{empty}                   % disable page numbering
 \usepackage{ragged2e}
+
+%\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
 
 \newcommand{\doi}[2]{\emph{\href{http://dx.doi.org/#1}{{#2}}}}
 \newcommand{\ads}[2]{\href{http://adsabs.harvard.edu/abs/#1}{{#2}}}
@@ -37,8 +39,8 @@ right=0.5in]{geometry}              % specify right page margin
 
 % name
 \textbf{\huge Stefan M Arseneau} \hfill
-\textsf{\large https://stefanarseneau.github.io} \\[0.5ex]
-\large Department of Astronomy, Boston University, Boston, MA  \hfill \textsf{\large arseneau@bu.edu} \\[0.5ex]
+\textsf{\large \href{https://stefanarseneau.github.io}{https://stefanarseneau.github.io}} \\[0.5ex]
+\large Department of Astronomy, Boston University, Boston, MA, USA  \hfill \textsf{\large \href{mailto:arseneau@bu.edu}{arseneau@bu.edu}} \\[0.5ex]
 
 \vspace{5pt}
 
@@ -101,7 +103,7 @@ right=0.5in]{geometry}              % specify right page margin
 
 % projects section
 \section*{Open Source Projects}
-\textbf{Compact Object Radial Velocities} \hfill \href{https://github.com/vedantchandra/corv}{github.com/vedantchandra/corv} \\
+Compact Object Radial Velocities \hfill \href{https://github.com/vedantchandra/corv}{github.com/vedantchandra/corv} \\
 \vspace{-9pt}
 \begin{itemize}
   \item Primary author and maintainer of a scientific software package for precision radial velocity estimation.
